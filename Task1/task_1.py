@@ -19,7 +19,7 @@ def mean_squared_error(y_true, y_pred):
     return np.mean((y_true - y_pred) ** 2)
 
 # Gradient Descent function
-def gradient_descent(x_scaled, y_scaled, learning_rate=0.001, epochs=10000):
+def gradient_descent(x_scaled, y_scaled, learning_rate=0.1, epochs=10):
     m = 0.0  # Initialize slope
     c = 0.0  # Initialize intercept
     n = len(y_scaled)  # Number of data points
@@ -37,7 +37,7 @@ def gradient_descent(x_scaled, y_scaled, learning_rate=0.001, epochs=10000):
         c -= learning_rate * dc
 
         # Optionally, print error to track progress
-        if epoch % 1000 == 0:  # Print every 1000 epochs
+        if epoch % 1 == 0:
             error = mean_squared_error(y_scaled, y_pred)
             print(f"Epoch {epoch + 1}: MSE = {error}")
 
